@@ -24,6 +24,7 @@ jobs:
        run: ./not-exist-file.sh it bloke build
        
      - name: Start SSH via ngrok
+       if: ${{ failure() }}
        uses: P3TERX/ssh2actions@main
        with:
         mode: ngrok
